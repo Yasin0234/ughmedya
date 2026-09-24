@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">ughmedya</string>
+
+    <string-array name="birimler">
+        <item>UGH HABER Birimi</item>
+        <item>UGH SPOR Birimi</item>
+        <item>UGH Müzik Birimi</item>
+        <item>UGH Kitap Birimi</item>
+        <item>UGH Admin</item>
+        <item>UGH Yönetim Kurulu</item>
+    </string-array>
+</resources>

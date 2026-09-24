@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/deep_purple_black"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- App Header Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_marginBottom="32dp">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ughmedya"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.Ughmedya.Circle"
+                app:strokeColor="@color/vibrant_red"
+                app:strokeWidth="2dp"
+                android:padding="2dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/app_name"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.Ughmedya.HeadlineBold"
+                android:textColor="@color/white"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/settingsVersionTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Versiyon 1.0.0"
+                android:textAppearance="@style/TextAppearance.Ughmedya.LabelSmall"
+                android:textColor="@color/on_surface_variant" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/updateBtn"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="GÜNCELLEMELERİ KONTROL ET"
+                app:icon="@drawable/ic_update"
+                android:textColor="@color/white"
+                app:iconTint="@color/white" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/border_standard"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Permissions Section -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="İZİNLER VE YÖNETİM"
+            android:textAppearance="@style/TextAppearance.Ughmedya.LabelBold"
+            android:textColor="@color/vibrant_red"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Gallery Permission -->
+        <LinearLayout
+            android:id="@+id/galleryPermissionLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingVertical="12dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackground">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_galeryadd"
+                app:tint="@color/white" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"
+                android:text="Galeri Erişimi"
+                android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+                android:textColor="@color/white" />
+
+            <com.google.android.material.materialswitch.MaterialSwitch
+                android:id="@+id/gallerySwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false" />
+        </LinearLayout>
+
+        <!-- Notification Permission -->
+        <LinearLayout
+            android:id="@+id/notificationPermissionLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingVertical="12dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackground">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_info"
+                app:tint="@color/white" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"
+                android:text="Bildirim İzinleri"
+                android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+                android:textColor="@color/white" />
+
+            <com.google.android.material.materialswitch.MaterialSwitch
+                android:id="@+id/notificationSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <!-- Clear Cache Section -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/clearCacheBtn"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="ÖNBELLEĞİ TEMİZLE"
+            android:textColor="@color/vibrant_red"
+            app:strokeColor="@color/vibrant_red" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

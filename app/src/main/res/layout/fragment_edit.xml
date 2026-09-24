@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/surface"
+    android:padding="16dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="40dp">
+
+        <TextView
+            android:id="@+id/edit_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Haberi Tasarla"
+            android:textColor="@color/on_surface"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/title_layout"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:hint="Haber Başlığı"
+            app:layout_constraintTop_toBottomOf="@id/edit_header">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/title_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/on_surface" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/content_layout"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="Haber İçeriği (Paylaşım Metni)"
+            app:layout_constraintTop_toBottomOf="@id/title_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/content_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="top"
+                android:minLines="4"
+                android:textColor="@color/on_surface" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:id="@+id/extra_fields_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/content_layout">
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:hint="Konum">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/location_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="true"
+                    android:textColor="@color/on_surface" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Kaynak">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/source_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="true"
+                    android:textColor="@color/on_surface" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/ratio_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Boyut Seçimi"
+            android:textAppearance="@style/TextAppearance.Material3.LabelLarge"
+            android:textColor="@color/on_surface_variant"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/extra_fields_layout" />
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/aspect_ratio_toggle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:checkedButton="@+id/btn_vertical"
+            app:layout_constraintTop_toBottomOf="@id/ratio_label"
+            app:singleSelection="true">
+
+            <Button
+                android:id="@+id/btn_vertical"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Dikey (4:5)" />
+
+            <Button
+                android:id="@+id/btn_square"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Kare (1:1)" />
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        <Button
+            android:id="@+id/preview_btn"
+            style="@style/Widget.Material3.Button.TonalButton"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="24dp"
+            android:text="Önizleme Oluştur"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/aspect_ratio_toggle" />
+
+        <!-- ÖNİZLEME KARTI -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/share_preview_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:visibility="visible"
+            app:cardCornerRadius="0dp"
+            app:cardElevation="12dp"
+            app:layout_constraintTop_toBottomOf="@id/preview_btn"
+            app:strokeWidth="0dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/share_layout"
+                android:layout_width="match_parent"
+                android:layout_height="450dp"
+                android:background="@color/black">
+
+                <ImageView
+                    android:id="@+id/preview_image_bg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ughmedya" />
+
+                <!-- Karartma Efekti (Metinlerin okunabilirliği için) -->
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:background="@drawable/bg_premium_gradient"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+                <!-- SABİT YAN BAR (Kusursuz Hizalama) -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/sidebar_container"
+                    android:layout_width="56dp"
+                    android:layout_height="350dp"
+                    android:layout_marginStart="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/preview_image_bg">
+
+                    <!-- İnce Arka Plan Hapı -->
+                    <View
+                        android:id="@+id/sidebar_pill"
+                        android:layout_width="24dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_slim_sidebar"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <!-- UGH Logosu (Merkezde) -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/sidebar_logo_card"
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        app:cardBackgroundColor="#0B1021"
+                        app:cardCornerRadius="28dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:strokeColor="@color/white"
+                        app:strokeWidth="2dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="8dp"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/ic_ughhaber" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Konum İkonu (Logonun hemen üstünde) -->
+                    <ImageView
+                        android:id="@+id/icon_pin"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_marginBottom="8dp"
+                        android:src="@drawable/ic_map"
+                        app:layout_constraintBottom_toTopOf="@id/sidebar_logo_card"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:tint="@color/white" />
+
+                    <!-- TÜRKİYE Metni (16sp, Tek Satır, -90 Derece Dönük) -->
+                    <TextView
+                        android:id="@+id/sidebar_location_tv"
+                        android:layout_width="120dp"
+                        android:layout_height="24dp"
+                        android:gravity="center"
+                        android:rotation="-90"
+                        android:singleLine="true"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@id/icon_pin"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="TÜRKİYE" />
+
+                    <!-- Kaynak İkonu (Logonun hemen altında) -->
+                    <ImageView
+                        android:id="@+id/icon_search"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_marginTop="8dp"
+                        android:src="@drawable/ic_kaynak"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/sidebar_logo_card"
+                        app:tint="@color/white" />
+
+                    <!-- UGH Metni (16sp, Tek Satır, -90 Derece Dönük) -->
+                    <TextView
+                        android:id="@+id/sidebar_source_tv"
+                        android:layout_width="100dp"
+                        android:layout_height="24dp"
+                        android:gravity="center"
+                        android:rotation="-90"
+                        android:singleLine="true"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/icon_search"
+                        tools:text="UGH" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!-- ANA METİN (Yan barın bittiği yerden ve aynı sol hizadan başlar) -->
+                <TextView
+                    android:id="@+id/preview_content_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginBottom="32dp"
+                    android:fontFamily="sans-serif-black"
+                    android:lineSpacingExtra="2dp"
+                    android:shadowColor="#80000000"
+                    android:shadowDx="2"
+                    android:shadowDy="2"
+                    android:shadowRadius="4"
+                    android:textColor="@color/white"
+                    android:textSize="22sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/sidebar_container"
+                    tools:text="// paylaşım metni" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:text="Paylaşmak için önizlemeye dokun"
+            android:textColor="@color/on_surface_variant"
+            android:textSize="12sp"
+            app:layout_constraintTop_toBottomOf="@id/share_preview_card" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

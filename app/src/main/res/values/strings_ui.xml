@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Login Screen -->
+    <string name="login_welcome_title">Hoş Geldin</string>
+    <string name="login_welcome_subtitle">Devam etmek için giriş yapınız</string>
+    <string name="login_hint_email">E-mail Adresiniz</string>
+    <string name="login_hint_password">Şifreniz</string>
+    <string name="login_forgot_password">Şifremi Unuttum</string>
+    <string name="login_button_text">GİRİŞ YAP</string>
+    <string name="login_no_account">Hesabınız yok mu? </string>
+    <string name="login_register_now">Kayıt olun</string>
+    <string name="login_support_text">Giriş yapamıyorsanız destek alın</string>
+
+    <!-- Register Screen -->
+    <string name="register_title">Kayıt Ol</string>
+    <string name="register_hint_name">Adınız Soyadınız</string>
+    <string name="register_hint_email">E-mail Adresiniz</string>
+    <string name="register_hint_birthdate">Doğum Tarihiniz</string>
+    <string name="register_hint_password">Şifreniz</string>
+    <string name="register_button_text">KAYIT OL</string>
+    <string name="register_already_have_account">Zaten hesabınız var mı? </string>
+    <string name="register_login_now">Giriş yapın</string>
+    <string name="register_support_text">Kayıt yapamıyorsanız destek alın</string>
+
+    <!-- Profile Add Screen -->
+    <string name="profile_add_title">Son Bir Adım Kaldı</string>
+    <string name="profile_add_subtitle">Hesap Bilgilerini Tamamla</string>
+    <string name="profile_add_hint_username">Kullanıcı Adınız</string>
+    <string name="profile_add_hint_unit">Birim Seçiniz</string>
+    <string name="profile_add_button_text">TAMAMLA</string>
+</resources>

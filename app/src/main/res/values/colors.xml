@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Vivid Media Narrative Palette -->
+    <color name="surface">#1e0d20</color>
+    <color name="surface_dim">#1e0d20</color>
+    <color name="surface_bright">#473248</color>
+    <color name="surface_container_lowest">#18081b</color>
+    <color name="surface_container_low">#271529</color>
+    <color name="surface_container">#2b192d</color>
+    <color name="surface_container_high">#362338</color>
+    <color name="surface_container_highest">#422e43</color>
+    <color name="on_surface">#f7d9f6</color>
+    <color name="on_surface_variant">#e7bcb9</color>
+    <color name="inverse_surface">#f7d9f6</color>
+    <color name="inverse_on_surface">#3d2a3f</color>
+    <color name="outline">#ae8885</color>
+    <color name="outline_variant">#5d3f3d</color>
+    <color name="surface_tint">#ffb3ae</color>
+    <color name="primary">#ffb3ae</color>
+    <color name="on_primary">#68000c</color>
+    <color name="primary_container">#e6192e</color>
+    <color name="on_primary_container">#fffcff</color>
+    <color name="inverse_primary">#c00020</color>
+    <color name="secondary">#40e56c</color>
+    <color name="on_secondary">#003912</color>
+    <color name="secondary_container">#02c953</color>
+    <color name="on_secondary_container">#004d1b</color>
+    <color name="tertiary">#ebb2ff</color>
+    <color name="on_tertiary">#520071</color>
+    <color name="tertiary_container">#a64dcc</color>
+    <color name="on_tertiary_container">#fffdff</color>
+    <color name="error">#ffb4ab</color>
+    <color name="on_error">#690005</color>
+    <color name="error_container">#93000a</color>
+    <color name="on_error_container">#ffdad6</color>
+    <color name="primary_fixed">#ffdad7</color>
+    <color name="primary_fixed_dim">#ffb3ae</color>
+    <color name="on_primary_fixed">#410005</color>
+    <color name="on_primary_fixed_variant">#930016</color>
+    <color name="secondary_fixed">#69ff87</color>
+    <color name="secondary_fixed_dim">#3ce36a</color>
+    <color name="on_secondary_fixed">#002108</color>
+    <color name="on_secondary_fixed_variant">#00531e</color>
+    <color name="tertiary_fixed">#f8d8ff</color>
+    <color name="tertiary_fixed_dim">#ebb2ff</color>
+    <color name="on_tertiary_fixed">#320047</color>
+    <color name="on_tertiary_fixed_variant">#721199</color>
+    <color name="background">#1e0d20</color>
+    <color name="on_background">#f7d9f6</color>
+    <color name="surface_variant">#422e43</color>
+
+    <!-- Specific Brand Colors from text description -->
+    <color name="vibrant_red">#e6192e</color>
+    <color name="electric_green">#00c853</color>
+    <color name="deep_purple_black">#0f0212</color>
+    <color name="surface_2">#250d2c</color>
+    <color name="border_standard">#33163d</color>
+    <color name="media_card_bg">#1a0820</color>
+
+</resources>

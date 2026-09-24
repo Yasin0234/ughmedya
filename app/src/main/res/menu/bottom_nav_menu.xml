@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/ic_home"
+        android:title="Ana Sayfa" />
+    <item
+        android:id="@+id/nav_haberler"
+        android:icon="@drawable/ic_ughhaber"
+        android:title="Haberler" />
+    <item
+        android:id="@+id/nav_edit"
+        android:icon="@drawable/ic_galeryadd"
+        android:title="Edit" />
+    <item
+        android:id="@+id/nav_paylas"
+        android:icon="@drawable/ic_update"
+        android:title="Paylaş" />
+    <item
+        android:id="@+id/nav_kategoriler"
+        android:icon="@drawable/ic_settings"
+        android:title="Kategoriler" />
+</menu>

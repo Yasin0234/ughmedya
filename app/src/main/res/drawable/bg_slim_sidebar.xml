@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <!-- Tam referans görselindeki UGH koyu laciverdi -->
+    <solid android:color="#0B1021" />
+    <stroke android:width="1.5dp" android:color="@color/white" />
+    <corners android:radius="50dp" />
+</shape>

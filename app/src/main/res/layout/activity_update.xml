@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/deep_purple_black"
+    android:padding="24dp"
+    tools:context=".config.UpdateActivity">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/logoIv"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/ughmedya"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/ShapeAppearance.Ughmedya.Circle"
+        app:strokeColor="@color/vibrant_red"
+        app:strokeWidth="1dp" />
+
+    <TextView
+        android:id="@+id/titleTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Yeni Güncelleme Mevcut"
+        android:textAppearance="@style/TextAppearance.Ughmedya.HeadlineBold"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logoIv" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/updateCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:cardBackgroundColor="@color/media_card_bg"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintTop_toBottomOf="@id/titleTv"
+        app:strokeColor="@color/border_standard"
+        app:strokeWidth="1dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:id="@+id/versionTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Versiyon : 1.1"
+                android:textAppearance="@style/TextAppearance.Ughmedya.LabelBold"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Yenilikler:"
+                android:textAppearance="@style/TextAppearance.Ughmedya.LabelBold"
+                android:textColor="@color/vibrant_red" />
+
+            <TextView
+                android:id="@+id/featuresTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="• Performans iyileştirmeleri yapıldı.\n• Yeni tasarım sistemi entegre edildi.\n• Hata düzeltmeleri ve kararlılık artırıldı."
+                android:textAppearance="@style/TextAppearance.Ughmedya.LabelSmall"
+                android:textColor="@color/on_surface_variant"
+                android:lineSpacingExtra="4dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/updateBtn"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="32dp"
+                android:backgroundTint="@color/vibrant_red"
+                android:text="ŞİMDİ GÜNCELLE"
+                android:textAppearance="@style/TextAppearance.Ughmedya.LabelBold"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:cornerRadius="8dp"
+                app:elevation="4dp" />
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/laterTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:padding="8dp"
+        android:text="Daha sonra hatırlat"
+        android:textAppearance="@style/TextAppearance.Ughmedya.LabelSmall"
+        android:textColor="@color/on_surface_variant"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/updateCard" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
